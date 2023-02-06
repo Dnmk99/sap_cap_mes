@@ -1,7 +1,7 @@
 # Getting Started
 
 Welcome to your new project.
-
+![delfinek](https://user-images.githubusercontent.com/98945704/217085836-2f1c216c-84eb-420e-8118-42aaf4293a71.jpg)
 It contains these folders and files, following our recommended project layout:
 
 File or Folder | Purpose
@@ -23,3 +23,4 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
