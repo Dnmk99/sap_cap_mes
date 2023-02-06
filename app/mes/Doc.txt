@@ -1,0 +1,115 @@
+######_____MES_____######
+#
+#
+#
+#
+Supported elements library: sap.m
+Supported elements now: Text, Label, ObjectHeader, Title, Icon, Button, Input, Table, List, Chart
+#
+#
+#
+Text
+    ->sizes
+    ->small
+    ->medium
+    ->large
+    ->xlarge
+    ->auto
+######sizes are NOT case sensitive
+#
+#
+#
+Label
+###sizes:
+        ->small
+        ->medium
+        ->large
+        ->xlarge
+        ->auto
+###sizes are NOT case sensitive
+#
+#
+#
+ObjectHeader
+###Larger than title, default padding: 3rem;
+#
+#
+#
+Title
+###Standard title
+#
+#
+#
+Icon
+###sizes:
+#        ->small: 1rem
+#        ->medium: 2rem
+#        ->large: 3rem
+#        ->auto
+#
+###elementText -> icon src(sap-icon://area-chart) -> https://sapui5.hana.ondemand.com/sdk/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#/overview/SAP-icons/?tab=grid&icon=accept
+###description -> color -> Color name(white,black,..), Hex rgb(#000000), Decimal(0,0,0)
+#
+#
+#
+Button
+###sizes - width only
+#        ->small: 3rem
+#        ->medium: 5rem
+#        ->large: 8rem
+#        ->auto: by text length
+#        ->empty value -> auto
+###sizes are NOT case sensitive
+#
+#
+#
+Input
+###sizes - width only
+#        ->small: 5rem
+#        ->medium: 10rem
+#        ->large: 15rem
+#        ->auto
+#        ->empty value -> auto
+###sizes are NOT case sensitive
+#
+#
+#
+Table
+###Element Text -> title header
+###sizes:
+#        ->small: 30rem
+#        ->medium: 50rem
+#        ->large: 100vw (100% screen width)
+#        ->auto: 100% screen width
+#        ->empty value -> auto
+#
+###Need to specify Table Headers
+###Need to specify Table Columns -> data
+#
+#
+#
+List
+###sizes:
+#        ->small: 15rem
+#        ->medium: 25rem
+#        ->large: 50rem
+#        ->maxwidth: 100vw (100% screen width)
+#        ->auto
+#        ->empty value -> auto
+#
+###Title -> Row title. Mandatory
+###Description - > text below title, left side. only visible when the title property is not empty. Optional
+###info -> text on the right side, same line as description. Optional
+###state -> status (color) of info. Error, Warning, Success, None (red, orange, green, grey - default).Optional
+#
+#
+#
+Chart
+###types -> element description: column,bar,line,bullet,waterfall,horizontal_waterfall,area
+###title -> element text
+###sizes: 
+#        -> small 20rem x 15rem
+#        -> medium 30rem x 20rem
+#        -> large 50rem x 25rem
+#        -> empty value -> medium
+#

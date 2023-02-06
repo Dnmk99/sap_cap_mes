@@ -1,0 +1,4 @@
+ViewId;ViewTitleLeft;ViewTitleMiddle;ViewTitleRight;Height;Width;EnterEvent;vAlign;hAlign;numOfRows;scrollable;splitter;splitView
+800;;Fiori Test;;auto;auto;2;Start;Stretch;8;true;x;x
+810;;Second Title;;auto;auto;2;Start;Center;4;true;x;x
+820;;Fiori Test;;auto;auto;2;Start;Stretch;2;true;;

@@ -1,0 +1,15 @@
+id;viewID;elementType;elementText;description;rowNumber;vAlign;hAlign      ;elWidth;elHeight;txtAlign;vSpacing;hSpacing;nextView;size   ;elementOrder;TransactionCode;usedAttribute
+1;800;ObjectHeader;Test Page  ;testHeader ;1		;      ;Center	    ;auto   ;auto    ;Center  ;        ;        ;         ;	     ;1           ;A01T          ;
+2;800;Input        ;          ;testInput1 ;2        ;Center;Center      ;auto   ;auto    ;Center  ;Medium  ;        ;810      ;Medium;            ;               ;PARAM
+4;800;Label         ;Text 1    ;testText1  ;3        ;Center;SpaceAround ;auto   ;auto    ;Center  ;None    ;        ;         ;Medium;            ;               ;
+3;800;Text         ;Text 2    ;testText1  ;3        ;Center;SpaceAround ;auto   ;auto    ;Center  ;None    ;        ;         ;Medium;            ;               ;
+5;800;Button       ;A1        ;testButton1;4        ;Center;SpaceAround ;auto   ;auto    ;Center  ;Small   ;        ;800      ;Medium;            ;               ;
+6;800;Button       ;A2        ;testButton2;4        ;Center;SpaceAround ;auto   ;auto    ;Center  ;Small   ;        ;810      ;Medium;            ;               ;
+7;800;Table        ;Overview  ;testTable1 ;5        ;Center;Center      ;auto   ;auto    ;Center  ;Medium  ;        ;         ;Medium;            ;               ;
+8;800;List         ;          ;testList1  ;6        ;Center;SpaceAround ;auto   ;auto    ;Center  ;Medium  ;        ;         ;Medium;            ;               ;
+9;810;Input        ;          ;testInput2 ;2        ;Center;Center      ;auto   ;auto    ;Center  ;Medium  ;        ;         ;Medium;2           ;A02T           ;
+10;810;Chart       ;Production;column     ;3        ;Center;SpaceAround ;auto   ;        ;        ;        ;        ;         ;Medium;            ;               ;
+11;810;ObjectHeader;YourMomma  ;testHeader ;1		;Center;Center	    ;auto   ;auto    ;Center  ;        ;        ;         ;	     ;1           ;A01T          ;
+12;810;Input        ;          ;testInput3 ;4       ;Center;Start       ;auto   ;auto    ;Center  ;Medium  ;        ;         ;Medium;2           ;A02T           ;
+13;810;Input        ;          ;testInput4 ;4       ;Center;Center      ;auto   ;auto    ;Center  ;Medium  ;        ;         ;Medium;2           ;A02T           ;
+14;810;Input        ;          ;testInput5 ;4       ;Center;End         ;auto   ;auto    ;Center  ;Medium  ;        ;         ;Medium;2           ;A02T           ;

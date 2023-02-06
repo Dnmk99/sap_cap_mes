@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="Data" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="viewData" EntityType="Data.viewData"/>
+                <EntitySet Name="elementsData" EntityType="Data.elementsData"/>
+                <EntitySet Name="listData" EntityType="Data.listData"/>
+                <EntitySet Name="tbHeadersData" EntityType="Data.tbHeadersData"/>
+                <EntitySet Name="tbColumnsData" EntityType="Data.tbColumnsData">
+                    <NavigationPropertyBinding Path="Header" Target="tbHeadersData"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="viewData">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="ViewId" Type="Edm.Int32"/>
+                <Property Name="ViewName" Type="Edm.String"/>
+                <Property Name="Height" Type="Edm.String"/>
+                <Property Name="Width" Type="Edm.String"/>
+                <Property Name="EnterEvent" Type="Edm.String"/>
+                <Property Name="vAlign" Type="Edm.String"/>
+                <Property Name="hAlign" Type="Edm.String"/>
+                <Property Name="numOfRows" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="elementsData">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="elementType" Type="Edm.String"/>
+                <Property Name="elementText" Type="Edm.String"/>
+                <Property Name="description" Type="Edm.String"/>
+                <Property Name="nextView" Type="Edm.String"/>
+                <Property Name="rowNumber" Type="Edm.String"/>
+                <Property Name="boxHeight" Type="Edm.String"/>
+                <Property Name="vAlign" Type="Edm.String"/>
+                <Property Name="hAlign" Type="Edm.String"/>
+                <Property Name="elWidth" Type="Edm.String"/>
+                <Property Name="elHeight" Type="Edm.String"/>
+                <Property Name="txtAlign" Type="Edm.String"/>
+                <Property Name="fontSize" Type="Edm.String"/>
+                <Property Name="vSpacing" Type="Edm.String"/>
+                <Property Name="hSpacing" Type="Edm.String"/>
+                <Property Name="sizeUnits" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="listData">
+                <Property Name="Title" Type="Edm.String"/>
+                <Property Name="rightValue" Type="Edm.String"/>
+                <Property Name="leftBelowTitle" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="tbHeadersData">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Header1" Type="Edm.String"/>
+                <Property Name="Header2" Type="Edm.String"/>
+                <Property Name="Header3" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="tbColumnsData">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="Header" Type="Data.tbHeadersData">
+                    <ReferentialConstraint Property="Header_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Header_ID" Type="Edm.Int32"/>
+                <Property Name="HU" Type="Edm.String"/>
+                <Property Name="Material" Type="Edm.String"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

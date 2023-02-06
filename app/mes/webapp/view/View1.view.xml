@@ -1,0 +1,27 @@
+<mvc:View controllerName="mes.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"  xmlns:core="sap.ui.core" xmlns:mc="sap.suite.ui.microchart" xmlns:smartmicrochart="sap.ui.comp.smartmicrochart"
+    xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:chart="sap.suite.ui.commons"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+        <customHeader>
+            <Bar id="bar1pg1">
+                <contentLeft>
+                    <Text id="headerLeftText" text=""/>
+                    <Image id="headerRLeftImage" ></Image>
+                </contentLeft>
+                <contentMiddle>
+                    <Title id="headerMiddleTitle"/>
+                </contentMiddle>   
+                <contentRight>
+                    <Text id="headerRightText" text=""/>
+                    <Image id="headerRightImage" ></Image>
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <HBox id="gen" width="100%" height="auto">
+        <Button id="customBtn" class="customBtn" text="BUTTON" type="Unstyled"/>
+        </HBox>
+    </Page>
+</mvc:View>

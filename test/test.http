@@ -1,0 +1,45 @@
+@server = http://localhost:4004
+@me = Authorization: Basic {{$processEnv USER}}:
+
+### ------------------------------------------------------------------------
+# Get service info
+GET http://localhost:4004/dataSet/tbColumnsData?
+&$expand=Header
+###
+
+###------------------------------------------------------------------------
+POST http://localhost:4004/dataSet/ColumnsData
+Content-Type: application/json
+Host: localhost
+
+{"ID": 25, "Header_ID": 1, "HU": "0000005", "Material" : "AG014"}
+
+###------------------------------------------------------------------------
+DELETE  http://localhost:4004/dataSet/ColumnsData/25
+
+#bere to by ID takze url a /id
+
+### ------------------------------------------------------------------------
+GET http://localhost:4004/dataSet/listData?
+
+### ------------------------------------------------------------------------
+POST http://localhost:4004/dataSet/elementsData
+Content-Type: application/json
+Host: localhost
+
+{"ID" : 8, "description" : "Button","elementType":"Button", "elementText" : "Enter", "nextView" : null,
+ "position" : "8", "boxHeight" : "auto", "vAlign" : "Center", "hAlign" : "Center", "elWidth" : "auto", "elHeight" : "auto",
+  "txtAlignement" : "Center", "fontSize" : null, "vSpacing" : "small", "hSpacing": null, "sizeUnits" : "rem"} 
+
+###
+DELETE  http://localhost:4004/dataSet/elementsData/8
+
+###
+GET  http://localhost:4004/dataSet/elementsData
+
+###
+GET  http://localhost:4004/dataSet/chartData?
+&$expand=xAxis,yAxis
+
+###
+GET  http://localhost:4004/dataSet/chartValue

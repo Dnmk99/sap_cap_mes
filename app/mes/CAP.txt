@@ -1,0 +1,165 @@
+CAP - NODE JS
+	Docs: https://cap.cloud.sap/docs/
+	Commands:
+		npm install -> npm packages https://docs.npmjs.com/cli/v6/commands/npm
+		npm i sqlite3 -D -> SQLite3 packages
+		cds deploy --to sqlite:db/MY-NAMESPACE.db -> Deploy data model to an SQLite database
+				-> config in package.json
+				-> open SQLite -> sqlite3 db/MY-NAMESPACE.db -cmd .dump
+				-> stop sql -> ctrl+c
+		#################################################################
+		Database: 
+			cds compile				- Compile CDS Models to Different Outputs 
+			cds deploy --to sqlite	- Persist Data by Deploying to SQLite
+			cds add hana			- Add HANA Configuration 
+			cds deploy –-to hana	- Persist Data by Deploying to HANA
+		#################################################################	
+		Compile CDS Models to different outputs
+			cds compile db/ --to sql
+			cds compile db/ --to json
+			cds compile db/ --to yml
+		#################################################################		
+			cds install -> dependencies from package
+			cds build 
+			cds watch - > opens app
+			cds watch-fiori -> opens fiori/webapp/index.html
+		#################################################################
+		Domain Models capture static aspects of problem domains as well-known entity-relationship models
+		Associations capture relationships. Compositions extend that to easily model document structures. 
+			https://cap.cloud.sap/docs/cds/cdl#associations
+		Annotations allow enriching models with additional metadata, such as for UIs, Validations, or Authorization.
+			https://cap.cloud.sap/docs/cds/cdl#associations
+		Aspects allow to flexibly extend models in same or separate modules, packages, or projects; at design time or dynamically at runtime.
+			https://cap.cloud.sap/docs/cds/cdl#aspects
+###############################################################################################################################################
+#			
+#		oData docs https://cap.cloud.sap/docs/advanced/odata
+#		
+#																																  
+###############################################################################################################################################
+#																UI structure
+#														https://cap.cloud.sap/docs/advanced/fiori#fiori-annotations
+#			app/	All SAP Fiori apps should go in here
+#				orders/	SAP Fiori app for order management
+#				admin/	SAP Fiori app for admins
+#				index.html	For sandbox tests
+#			srv/	All services
+#			db/	Domain models, and db stuff
+#	
+#
+#
+	Project structures
+		app -> UI content
+		db -> database level schema model https://cap.cloud.sap/docs/guides/domain-models
+		srv -> service definition layer https://cap.cloud.sap/docs/guides/providing-services#introduction--core-concepts
+		package.json -> project descriptor
+		
+		Every active thing in CAP is a service
+		
+		###
+		#Service V2 model			
+		#	npm i @sap/cds-odata-v2-adapter-proxy
+		#	srv folder -> server.js
+		#	copy node_modules/bin/@sap/cds/server.js
+		###
+		server.js
+		#	"use strict";
+		#	const cds = require("@sap/cds");
+		#	const proxy = require("@sap/cds-odata-v2-adapter-proxy");
+		#	cds.on("bootstrap", app => app.use(proxy()));
+		#	module.exports = cds.server;
+		###
+		terminal: 
+			[cds] - loading server from { file: 'srv/server.js' }
+			[cov2ap] - [HPM] Proxy created: /  -> http://localhost:4004
+			[cov2ap] - [HPM] Proxy rewrite rule created: "^/v2" ~> ""
+		###
+		#
+		#
+		UI5
+		#app/webapp/manifest.json
+		#dataSources:	change odataVersion to "odataVersion": "2.0"
+		#				uri "/v2/..."
+		#app/webapp/controller/MYCONTROLLER.controller.js -> oModel.read
+		####
+	Rest client 
+		- root of project -> file test.http
+			-> to make request against service -> provides responses 
+			###
+			#
+			# Browse Books
+			#
+			GET http://localhost:4004/catalog/Books?
+			  # &$select=title,stock
+			  # &$expand=currency
+			  # &sap-language=de
+
+			###
+			#
+			# Get Author wit ID 101
+			#
+			GET http://localhost:4004/catalog/Authors(101)
+
+			###
+			#
+			# Update Author with ID 101
+			#
+			POST http://localhost:4004/catalog/Authors
+			Content-Type: application/json
+
+			{"ID": 101, "name": "Some Author"}
+
+
+			###
+			#
+			# Order a Book
+			#
+			POST http://localhost:4004/catalog/Orders
+			Content-Type: application/json;IEEE754Compatible=true
+
+			{"book_ID": 201, "amount": 5}
+
+
+		
+		db commands:
+		npm i sqlite3 -D
+		cds deploy --to sqlite:db/DB_NAME.db
+		sqlite3 db/DB_NAME.db -cmd .dump
+				
+		###########
+		/srv/service.cds
+			service testService @(path: '/testData') {
+				entity Data as projection on test.Data;
+			}
+		###########
+		/db/schema.cds
+			entity Data {
+				key ID : Integer;
+				title : String;
+				description : String;
+			}
+		###########
+		/app/webbapp/manifest.json
+			"dataSources": {
+			  "mainService": {
+				"uri": "/v2/testData/",
+				"type": "OData",
+				"settings": {
+				  "annotations": [],
+				  "localUri": "localService/metadata.xml",
+				  "odataVersion": "2.0"
+				}
+			  }
+			}
+		  },
+		###########
+		/app/webbapp/controller/View1.controller.js
+			oModel.read(`/Data`,{
+                success: function(rData){ 
+                    console.log(rData);
+                },
+                error: function(error){ 
+                    console.log(error);
+                }
+            });
+		

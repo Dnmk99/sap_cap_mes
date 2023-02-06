@@ -1,0 +1,183 @@
+/* Enter your custom styles here */
+*{
+    box-sizing: border-box;
+}
+/*Vertical spacing*/
+.vSpacingNone{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.vSpacingTiny{
+    padding-top: 0.2rem ;
+    padding-bottom: 0.2rem ;
+}
+.vSpacingSmall{
+    padding-top: 0.3rem ;
+    padding-bottom: 0.3rem ;
+}
+.vSpacingMedium{
+    padding-top: 1rem ;
+    padding-bottom: 1rem ;
+}
+/* .vSpacingLarge{
+    padding-top: 2rem ;
+    padding-bottom: 2rem ;
+} */
+/*Horizontal spacing*/
+.hSpacingNone{
+    padding-left: 0;
+    padding-right: 0;
+}
+.hSpacingTiny{
+    padding-left: 0.25rem ;
+    padding-right: 0.25rem ;
+}
+.hSpacingSmall{
+    padding-left: 0.5rem ;
+    padding-right: 0.5rem ;
+}
+.hSpacingMedium{
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+}
+.hSpacingLarge{
+    padding-left: 2rem ;
+    padding-right: 2rem ;
+}
+/*Font style*/
+.font-Small{
+    font-size: small;
+}
+.font-Medium{
+    font-size: medium;
+}
+.font-Large{
+    font-size: large;
+}
+.font-X-Large{
+    font-size: x-large;
+}
+.font-Auto{
+    font-size: auto;
+}
+/*Button classes*/
+.btn-Small{
+    width: 3rem !important;
+    /* height: 2rem !important; */
+}
+.btn-Medium{
+    width: 5rem !important;
+    /* height: 3rem !important; */
+}
+.btn-Large{
+    width: 8rem !important;
+    /* height: 5rem !important; */
+}
+.btn-Auto{
+    width: auto;
+    /* height: 5rem !important; */
+}
+.customBtn{
+    font-family: "72-SemiboldDuplex","7-SemiboldDuplexfull","72","72full",Arial, Helvetica, sans-serif;
+    width: 5rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #eaecee;
+    border-color: #eaecee;
+    outline: transparent;
+}
+/* .customBtn:focus {
+    
+} */
+.customBtn:hover{
+    border: 0.2px solid;
+    background-color: #fff;
+    border-color: rgb(187, 187, 187);
+    text-shadow: none;
+    cursor: pointer;
+}
+.customBtn:hover:active{
+    border: 0.2px solid;
+    background-color: #fff;
+    border-color: #0070f2;
+    color: #0070f2;
+    text-shadow: none;
+}
+/*icon sizes*/
+.icon-Small{
+    font-size: 1rem;
+}
+.icon-Medium{
+    font-size: 2rem;
+}
+.icon-Large{
+    font-size: 3rem;
+}
+.icon-Auto{
+    font-size: auto;
+}
+.chart-Small{
+    width: 20rem;
+    height: 15rem;
+}
+.chart-Medium{
+    width: 30rem;
+    height: 20rem;
+}
+.chart-Large{
+    width: 50rem;
+    height: 25rem;
+}
+/*empty row*/
+.hidden{
+    display: none;
+}
+/*kdyz okno mensi xy px*/
+@media only screen and (max-width: 900px) { /*900px*/
+    .large-Element {
+        padding: +1rem;
+        white-space: pre;
+    }
+    .table{
+        width: 100% !important;
+        height: 100% !important;
+        white-space: pre;
+    }
+    .chart{
+        width: max-content !important;
+        height: max-content !important;
+        white-space: pre;
+    }
+    .splitView{
+        padding: +1rem;
+        white-space: pre;
+    }
+}
+
+@media only screen and (max-width: 1330px) { /*900px*/
+    .splitCont{
+        padding: +1rem;
+        width: max-content !important;
+        height: max-content !important;
+        white-space: pre;
+    }
+    .split-Large-Element {
+        padding: +1rem;
+        white-space: pre;
+    }
+    .split-table{
+        width: 100% !important;
+        height: 100% !important;
+        white-space: pre;
+    }
+    .split-chart{
+        width: max-content !important;
+        height: max-content !important;
+        white-space: pre;
+    }
+    .splitView{
+        padding: +1rem;
+        white-space: pre;
+    }
+}
